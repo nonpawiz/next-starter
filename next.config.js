@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+/** @type {import('next').NextConfig} */
 
-module.exports = nextConfig
+const nextConfig = {
+  crossOrigin: "anonymous",
+  devtool: "source-map",
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    appDir: true,
+  },
+};
+
+module.exports = nextConfig;

@@ -1,0 +1,296 @@
+
+a {
+  color: #6c757d;
+}
+
+a:hover {
+  color: #6c757d;
+}
+
+a:hover h3 {
+  color: #e6b12a;
+}
+
+.position-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6
+}
+
+.page-link:focus {
+  z-index: 2;
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+}
+
+.page-link:not(:disabled):not(.disabled) {
+  cursor: pointer
+}
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6
+}
+
+.vid-container {
+  max-width: 514px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vid-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.vid-container iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+hr.new4 {
+  border-top: 4px solid #a07cc5;
+}
+
+#announceimage img {
+
+  min-width: 100% !important;
+  min-height: 293px !important;
+  /* max-width: 293px !important; */
+  max-height: 293px !important;
+  /* background-size: cover !important; */
+  object-fit: cover !important;
+
+}.owl-slide {
+  height: 60vh !important;
+}
+
+.hero-slider-wrapper {
+  height: 60vh !important;
+  min-height: 250px !important;
+}
+
+.hero-slider {
+  height: 60vh !important;
+
+}
+
+.parent {
+  position: relative;
+  margin: 0 0 15px;
+  padding: 5px;
+  padding-left: 100px;
+  min-height: 50px;
+}
+
+.parent .fixed {
+  position: absolute;
+  left: 5px;
+  width: 70px;
+}
+
+.parent .fluid {
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+._line {
+  border-top: 1px solid #ddd;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
+
+.line_30px {
+  border-top: 30px solid #1F417C;
+}
+
+.text-main {
+  color: #1F417C !important;
+}
+
+.checkbox:checked:before {
+  background-color: #1F417C !;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #1F417C;
+}
+
+.bg-blue-main {
+  background-color: #ffdb7f;
+  /* background: rgb(250, 168, 54);
+  background: linear-gradient(90deg, rgba(250, 168, 54, 1) 0%, rgba(230, 177, 42, 1) 50%, rgba(255, 255, 255, 1) 100%); */
+}
+
+.bg-yellow {
+  background-color: #FBFECF;
+  /* background: rgb(250, 168, 54);
+  background: linear-gradient(90deg, rgba(250, 168, 54, 1) 0%, rgba(230, 177, 42, 1) 50%, rgba(255, 255, 255, 1) 100%); */
+}
+.demo-gallery > div {
+  margin-bottom: 0;
+}
+.demo-gallery > div > div {
+  float: left;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  width: 200px;
+}
+.demo-gallery > div > div a {
+  border: 3px solid #FFF;
+  border-radius: 3px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+.demo-gallery > div > div a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.demo-gallery > div > div a:hover > img {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+.demo-gallery > div > div a:hover .demo-gallery-poster > img {
+  opacity: 1;
+}
+.demo-gallery > div > div a .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+.demo-gallery > ul > li a .demo-gallery-poster > img {
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.demo-gallery > ul > li a:hover .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.demo-gallery .justified-gallery > a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+.demo-gallery .justified-gallery > a:hover > img {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster > img {
+  opacity: 1;
+}
+.demo-gallery .justified-gallery > a .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+.demo-gallery .justified-gallery > a .demo-gallery-poster > img {
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.demo-gallery .video .demo-gallery-poster img {
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+  opacity: 0.8;
+  width: 48px;
+}
+.demo-gallery.dark > ul > li a {
+  border: 3px solid #04070a;
+}
+.home .demo-gallery {
+  padding-bottom: 80px;
+}
