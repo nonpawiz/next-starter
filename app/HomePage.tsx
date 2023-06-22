@@ -1,9 +1,32 @@
 "use client";
 import Image from "next/image";
 import { signIn } from "next-auth/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import Cookies from "js-cookie";
+import { useSession } from "next-auth/react";
 
-export default function HomePage() {
+export default async function HomePage() {
+  
+  // console.log(status);
+  // if (status === "authenticated") {
+  //   return <p>Signed in as {session.user.name}</p>;
+  // }
+  // const session = await getServerSession(authOptions);
+  useEffect(() => {
+    // if (Cookies.get("login_msg") == "success")
+    //   Swal.fire({
+    //     title: "ลงทะเบียนสำเร็จ",
+    //     // text: "ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง",
+    //     icon: "success",
+    //     confirmButtonText: "ตกลง",
+    //     // showCancelButton: true,
+    //     // cancelButtonText: "ยกเลิก",
+    //     cancelButtonColor: "#DD6B55",
+    //     confirmButtonColor: "#1F417C",
+    //   });
+  }, []);
+
   return (
     <>
       <div className="container py-5">

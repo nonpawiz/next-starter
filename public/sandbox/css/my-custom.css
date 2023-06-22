@@ -647,3 +647,102 @@ p h1 h2 h3 h4 h5 h6 title {
 .table>thead>tr>th {
   vertical-align: middle !important;
 }
+
+
+.swal2-title {
+  font-size: 18px !important;
+}
+
+.swal2-html-container {
+  font-size: 16px !important;
+}
+
+/* div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: #1F417C !important;
+  border: 0 !important;
+}
+
+button:focus .swal2-confirm .swal2-styled {
+  outline: 0 !important;
+} */
+
+
+/* @media (max-width: 899.95px){
+    .tss-1vd39vz-MUIDataTableBodyCell-stackedCommon {
+        display: unset !important;
+        font-size: 16px;
+        height: auto;
+        width: calc(50%);
+        box-sizing: border-box;
+    }
+    .css-1ex1afd-MuiTableCell-root {
+        display: inline-block !important;
+    }
+    .tss-pw90p9-MUIDataTableHead-responsiveStacked {
+        display: none !important;
+    }
+} */
+
+.css-78c6dr-MuiToolbar-root-MuiTablePagination-toolbar {
+  /* display: flex !important; */
+  align-items: center !important;
+}
+
+table * {
+  font-size: 14px !important;
+
+}
+
+p {
+  margin: 0 !important
+}
+
+.css-2ulfj5-MuiTypography-root {
+  font-size: 18px !important;
+}
+
+.css-hyum1k-MuiToolbar-root {
+  padding-left: 10px !important;
+  padding-right: 5px !important;
+}
+
+.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input,
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  font-size: 16px !important;
+}
+
+.tss-qgr5st-MUIDataTableToolbarSelect-iconButton {
+  display: none !important;
+}
+
+.MuiPaper-rounded {
+  border-radius: 0 !important;
+}
+
+td[data-colindex="0"] * {
+  margin-left: 20px !important;
+}
+
+/* th[data-colindex="0"] {
+  justify-content: center;
+} */
+
+.tss-1fz5efq-MUIDataTableToolbar-left {
+  /* display: none !important; */
+}
+
+.tss-qbo1l6-MUIDataTableToolbar-actions {
+  text-align: right !important;
+}
+
+/* .tss-52j81d-MUIDataTableSearch-clearIcon{
+  visibility: hidden !important;
+} */
+.tss-dbu3l1-MUIDataTableViewCol-formGroup {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.tss-1nmvwsz-MUIDataTableViewCol-title {
+  display: none !important;
+}

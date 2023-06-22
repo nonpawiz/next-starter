@@ -25,11 +25,34 @@ export function LogOutBtn() {
         <li className="nav-item fw-normal border-top">
           <div
             className="dropdown-item fw-normal cursor-pointer"
-            onClick={() => signOut()}
+            onClick={() =>
+              signOut({
+                callbackUrl: "/auth/login",
+              })
+            }
           >
             ออกจากระบบ
           </div>
         </li>
+      </div>
+    </>
+  );
+}
+
+export function LogOutBtnFooter() {
+  return (
+    <>
+      <div className="offcanvas-footer flex-column d-block d-md-none cursor-pointer">
+        <div
+          className="nav-item fw-normal py-3 text-light"
+          onClick={() =>
+            signOut({
+              callbackUrl: "/auth/login",
+            })
+          }
+        >
+          <i className="uil uil-signin" /> ออกจากระบบ
+        </div>
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 // import { NextResponse } from "next/server";
 import type { NextApiRequest, NextApiResponse } from "next";
 import connection from "../connection";
-import { getToken } from "next-auth/jwt";
 
 // type Data = {
 //   data: any[]

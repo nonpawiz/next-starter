@@ -1,10 +1,13 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import connection from "../../connection";
+import { parseCookies, setCookie } from 'nookies';
 
 export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+    updateAge: 1 * 60 * 60, // 1 hours
   },
   providers: [
     CredentialsProvider({
@@ -36,8 +39,8 @@ export const authOptions: NextAuthOptions = {
         //   email: "jsmith@example.com",
         // };
         const { username, password } = credentials as any;
-
         const user = await connection("users").where("name", username).first();
+
         // console.log({ user });
 
         if (password === user.password) {
@@ -49,29 +52,42 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    session: ({ session, token }) => {
-      // console.log("Session Callback", { session, token });
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          id: token.id,
-          randomKey: token.randomKey,
-        },
-      };
+    async jwt({ token, user }) {
+      return { ...token, ...user };
     },
-    jwt: ({ token, user }) => {
-      // console.log("JWT Callback", { token, user });
-      if (user) {
-        const u = user as unknown as any;
-        return {
-          ...token,
-          id: u.id,
-          randomKey: u.randomKey,
-        };
-      }
-      return token;
+    async session({ session, token, user }) {
+      // Send properties to the client, like an access_token from a provider.
+      session.user = token;
+      // session.user = {
+      //   ...session.user,
+      //   hee: "sdsadsad",
+      // };
+
+      return session;
     },
+    // session: ({ session, token }) => {
+    //   // console.log("Session Callback", { session, token });
+    //   return {
+    //     ...session,
+    //     user: {
+    //       ...session.user,
+    //       id: token.id,
+    //       randomKey: token.randomKey,
+    //     },
+    //   };
+    // },
+    // jwt: ({ token, user }) => {
+    //   // console.log("JWT Callback", { token, user });
+    //   if (user) {
+    //     const u = user as unknown as any;
+    //     return {
+    //       ...token,
+    //       id: u.id,
+    //       randomKey: u.randomKey,
+    //     };
+    //   }
+    //   return token;
+    // },
   },
   pages: {
     signIn: "/auth/login",

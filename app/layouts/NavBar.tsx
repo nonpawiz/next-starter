@@ -1,12 +1,13 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/auth";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { LoginBtn, LogOutBtn } from "./Button";
+import { LoginBtn, LogOutBtn, LogOutBtnFooter } from "./Button";
+import Alert from "./Alert";
 
 async function Nav() {
-  const session = await getServerSession(authOptions);
+  const session: any = await getServerSession(authOptions);
 
   return (
     <>
@@ -115,7 +116,7 @@ async function Nav() {
                                   <li className="nav-item fw-normal">
                                     <a
                                       className="dropdown-item fw-normal"
-                                      href="/admin/user"
+                                      href="/admin/users"
                                     >
                                       รายชื่อผู้ใช้
                                     </a>
@@ -128,14 +129,7 @@ async function Nav() {
                                       ตั้งรหัสผ่านใหม่
                                     </a>
                                   </li>
-                                  <li className="nav-item fw-normal border-top">
-                                    <div
-                                      className="dropdown-item fw-normal cursor-pointer"
-                                      // onClick={() => signOut()}
-                                    >
-                                      ออกจากระบบ
-                                    </div>
-                                  </li>
+                                  <LogOutBtn />
                                 </ul>
                               </div>
                             </div>
@@ -174,14 +168,6 @@ async function Nav() {
                                       โปรไฟล์ของฉัน
                                     </a>
                                   </li>
-                                  {/* <li className="nav-item fw-normal">
-                                  <a
-                                    className="dropdown-item fw-normal"
-                                    href=""
-                                  >
-                                    ตั้งรหัสผ่านใหม่
-                                  </a>
-                                </li> */}
                                   <LogOutBtn />
                                 </ul>
                               </div>
@@ -195,20 +181,7 @@ async function Nav() {
                   <></>
                 )}
               </ul>
-              {session?.user ? (
-                <>
-                  <div className="offcanvas-footer flex-column d-block d-md-none cursor-pointer">
-                    <div
-                      className="nav-item fw-normal py-3 text-light"
-                      // onClick={() => signOut()}
-                    >
-                      <i className="uil uil-signin" /> ออกจากระบบ
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <></>
-              )}
+              {session?.user ? <LogOutBtnFooter /> : <></>}
             </div>
           </div>
           <div className="navbar-other d-flex ms-auto">
@@ -227,6 +200,7 @@ async function Nav() {
         </div>
       </nav>
       <div style={{ borderTop: "1px solid #ddd" }} />
+      <Alert data={{ name: session?.user.name }} />
     </>
   );
 }
