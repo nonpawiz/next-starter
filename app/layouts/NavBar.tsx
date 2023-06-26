@@ -116,7 +116,7 @@ async function Nav() {
                                   <li className="nav-item fw-normal">
                                     <a
                                       className="dropdown-item fw-normal"
-                                      href="/admin/users"
+                                      href="/admin/user"
                                     >
                                       รายชื่อผู้ใช้
                                     </a>
@@ -124,7 +124,7 @@ async function Nav() {
                                   <li className="nav-item fw-normal">
                                     <a
                                       className="dropdown-item fw-normal"
-                                      href="http://128.199.159.183/track/public/resetpassword"
+                                      href=""
                                     >
                                       ตั้งรหัสผ่านใหม่
                                     </a>

@@ -12,8 +12,6 @@ interface Props {
 }
 
 async function Index() {
-
-
   return <HomePage />;
 }
 
