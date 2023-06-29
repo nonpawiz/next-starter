@@ -9,6 +9,8 @@ import Swal from "sweetalert2";
 
 function Register() {
   const [state, setState] = React.useState({
+    id: 0,
+    register: 1,
     name: "",
     firstname: "",
     lastname: "",
@@ -16,16 +18,6 @@ function Register() {
     password: "",
     role: "user",
   });
-
-  // function handleChange(e: React.FormEvent<EventTarget>) {
-  //   let target = e.target as HTMLInputElement;
-  //   if (target.files) {
-  //     setState({ ...state, [target.name]: target.files[0] });
-  //   } else {
-  //     setState({ ...state, [target.name]: target.value });
-  //   }
-  //   console.log(state);
-  // }
 
   const handleChange: InputChangeEventHandler = async (e) => {
     if (e.target.files) {
@@ -38,17 +30,15 @@ function Register() {
 
   async function handleSubmit(e: React.FormEvent<EventTarget>) {
     let target = e.target as HTMLInputElement;
-    await axios.post("/api/user/0", state).then(({ data }) => {
-      console.log("success !!!!!");
+    await axios.post("/api/user", state).then(({ data }) => {
       console.log(data);
-      if (typeof data[0] === "number") {
-        Cookies.set("register_msg", "success", { expires: 5 / (24 * 60 * 60) });
-        window.location.href = "/auth/login";
-      } else {
+      return;
+
+      if (data.status === "success") {
         Swal.fire({
-          title: "ขออภัย",
-          text: "ลงทะเบียนไม่สำเร็จ",
-          icon: "error",
+          title: "Successfully",
+          text: "อัปเดตข้อมูลสำเร็จ",
+          icon: "success",
           confirmButtonText: "ตกลง",
           // showCancelButton: true,
           // cancelButtonText: "ยกเลิก",
@@ -56,11 +46,18 @@ function Register() {
           confirmButtonColor: "#1F417C",
         });
       }
-
-      // let redirect = data.redirect;
-      // Cookies.set("register_msg", "success", { expires: 5 / (24 * 60 * 60) });
-      // //   // Redirect used for reCAPTCHA and/or thank you page
-      // window.location.href = redirect;
+      if (data.add === "success") {
+        Swal.fire({
+          title: "Successfully",
+          text: "เพิ่มผู้ใช้สำเร็จ",
+          icon: "success",
+          confirmButtonText: "ตกลง",
+          // showCancelButton: true,
+          // cancelButtonText: "ยกเลิก",
+          cancelButtonColor: "#DD6B55",
+          confirmButtonColor: "#1F417C",
+        });
+      }
     });
 
     // return "wow !";

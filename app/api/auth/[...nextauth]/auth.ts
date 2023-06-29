@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import connection from "../../connection";
-import { parseCookies, setCookie } from 'nookies';
+import { comparePasswords } from "./comparePasswords";
 
 export const authOptions: NextAuthOptions = {
   session: {
@@ -41,11 +41,11 @@ export const authOptions: NextAuthOptions = {
         const { username, password } = credentials as any;
         const user = await connection("users").where("name", username).first();
 
-        // console.log({ user });
-
-        if (password === user.password) {
+        try {
+          const passwordMatch = await comparePasswords(password, user.password);
           return user;
-        } else {
+        } catch (error) {
+          console.error("Error during login:", error);
           return null;
         }
       },

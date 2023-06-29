@@ -50016,3 +50016,37 @@ footer.bg-dark.angled.lower-start:after,
 footer.bg-dark.angled.upper-start:before {
   border-left-color: #21262c !important;
 }
+
+.css-11mde6h-MuiPaper-root {
+  box-shadow: unset !important;
+  margin: unset !important;
+  padding: unset !important;
+}
+
+button[disabled] {
+  cursor: unset !important;
+}
+
+.StepButton-d2-0-2-8 {
+  background-color: rgba(31, 65, 124, .7) !important;
+}
+
+.StepButton-d2-0-2-8.active {
+  background-color: #1F417C !important;
+}
+
+.StepButton-d6-0-2-18.completed {
+  background-color: rgba(31, 65, 124, .7) !important;
+}
+
+.StepButton-d6-0-2-18.active {
+  background-color: #1F417C !important;
+}
+
+/* .StepButtonContent-d11-0-2-33 {
+  background-color: rgba(31, 65, 124, .7) !important;
+} */
+
+.StepButton-d10-0-2-32.active {
+  background-color: #1F417C !important;
+}

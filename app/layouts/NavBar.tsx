@@ -103,7 +103,7 @@ async function Nav() {
                           href="#"
                           data-bs-toggle="dropdown"
                         >
-                          <i className="fa fa-user" /> Admin
+                          <i className="fa fa-user" /> {session.user.name}
                         </a>
                         <ul className="dropdown-menu mega-menu" id="mynav">
                           <li

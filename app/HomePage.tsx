@@ -38,9 +38,9 @@ export default async function HomePage() {
         >
           wow
         </button> */}
-        <button className="btn bg-main text-light" onClick={() => signIn()}>
+        {/* <button className="btn bg-main text-light" onClick={() => signIn()}>
           wow
-        </button>
+        </button> */}
 
         <div
           className="modal fade"
